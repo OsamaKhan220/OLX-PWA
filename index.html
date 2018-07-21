@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="stylesheet" href="src/css/styles.css" />
+    <link rel="stylesheet" href="src/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="src/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="src/css/util.css">
+    <link rel="stylesheet" type="text/css" href="src/css/main.css">
+    <title>Home | OLX PWA</title>
+    <!-- Add to home screen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Rating App">
+    <link rel="apple-touch-icon" href="src/images/favicon/152.png">
+    <meta name="msapplication-TileImage" content="src/favicon/144.png">
+    <meta name="msapplication-TileColor" content="#34495e94">
+
+    <script src="src/js/jquery.min.js"></script>
+    <script src="src/js/bootstrap.min.js"></script>
+</head>
+<body onload="randomAds()">
+<div id="preloadera" style="display: none;"></div>
+<center>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand"><div class="logo"><a href="./index.html"><img src="src/images/olxlogo.png" /></a></div></a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"> My Account
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu" id="btnAcc">
+                            <li><a href='javascript:void(0)' onclick='gotoSignIn()'><h5>SignUp/SignIn</h5></a></li>
+                            <li><a href='javascript:void(0)' onclick='myFavAds()'><h5>Favourites</h5></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0)" id="btnAdPost">Submit an Ad</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="head">
+        <h1>Sell or Advertise anything online with Resale</h1>
+        <div class="searchTab"><input type="search"  id="txtSearch"  placeholder="Search" />
+            <img src="src/images/search.png" onClick="searchAds()" />
+        </div>
+    </div>
+    <div class="contPar">
+        <div class="container catbtn" onClick="catd()"><p>Categories<img src="src/images/dropdown.png" /></p></div>
+        <div class="container pad" id="catDiv">
+            <div class="row" id="catUl">
+                <div class="col-lg-2 col-md-3 col-sm-6 col-xs-12" onClick="getCategoryAds('Mobiles')">
+                    <div class="iconB">
+                        <img src="src/images/logo2/mobileLogo.png" /><p>Mobiles</p></div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6 col-xs-12" onClick="getCategoryAds('Vehicles')">
+                    <div class="iconB">
+                        <img src="src/images/logo2/vehicleLogo.png" /><p>Vehicles</p></div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6 col-xs-12" onClick="getCategoryAds('Bikes')">
+                    <div class="iconB">
+                        <img src="src/images/logo2/bikeLogo.png" /><p>Bikes</p></div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6 col-xs-12" onClick="getCategoryAds('Jobs')">
+                    <div class="iconB">
+                        <img src="src/images/logo2/jobLogo.png" /><p>Jobs</p></div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6 col-xs-12" onClick="getCategoryAds('Kids')">
+                    <div class="iconB">
+                        <img src="src/images/logo2/kidLogo.png" /><p>Kids</p></div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6 col-xs-12" onClick="getCategoryAds('Property')">
+                    <div class="iconB">
+                        <img src="src/images/logo2/propertyLogo.png" /><p>Property</p></div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6 col-xs-12" onClick="getCategoryAds('Animals')">
+                    <div class="iconB">
+                        <img src="src/images/logo2/petLogo.png" /><p>Animals</p></div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6 col-xs-12" onClick="getCategoryAds('Furniture & Home Decor')">
+                    <div class="iconB">
+                        <img src="src/images/logo2/furnitureLogo.png" /><p>Furnitures</p></div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6 col-xs-12" onClick="getCategoryAds('Books')">
+                    <div class="iconB">
+                        <img src="src/images/logo2/bookLogo.png" /><p>Books</p></div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6 col-xs-12" onClick="getCategoryAds('Electronics & Home Appliances')">
+                    <div class="iconB">
+                        <img src="src/images/logo2/electronicLogo.png" /><p>Electronics</p></div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6 col-xs-12" onClick="getCategoryAds('Fashion & Beauty')">
+                    <div class="iconB">
+                        <img src="src/images/logo2/fashionLogo.png" /><p>Fashion</p></div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6 col-xs-12" onClick="getCategoryAds('Services')">
+                    <div class="iconB">
+                        <img src="src/images/logo2/otherLogo.png" /><p>Services</p></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="container">
+            <div class="row my-3">
+                <div class="col col-sm-12" id="adsUl">
+                    <u><h1 class="adsH1">Leatest Ads</h1></u>
+                </div>
+            </div>
+        </div>
+    </div>
+</center>
+
+<center>
+    <div class="cont3 navbar-fixed-bottom" style="z-index: -1; width: 100%;background-image: url(src/images/white.png);box-shadow: 0px 0px 20px 0px black;">
+        <div class="container">
+            <br />
+            <br />
+            <h1>OLX PAKISTAN</h1>
+            <h2>-</h2>
+
+            <h4>Resale App is the Easiest way for<br /> Selling and buying second-hand goods</h4>
+            <br />
+            <button class="butn1" onClick="gotoAdForm()"><b>POST A FREE ADD</b></button><br /><br />
+            <button class="butn2" onClick="logout()"><b>LOGOUT</b></button><br /><br /><br /><br />
+        </div>
+
+    </div>
+</center>
+
+<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+<script src="./src/js/index.js"></script>
+</body>
+</html>

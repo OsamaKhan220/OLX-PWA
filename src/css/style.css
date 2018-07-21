@@ -1,0 +1,138 @@
+#preloadera {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-image: url(../images/load.gif);
+    background-repeat: no-repeat;
+    background-color: #f3f3f396;
+    background-position: center;
+}
+.navbar-custom {
+    background-color: #0076be;
+    color: white;
+}
+.navbar-custom a{
+    color: white;
+}
+
+.navbar-custom a:hover{
+    color: white;
+}
+fieldset {
+    padding: 10px !important;
+    border: 1px solid rgba(0, 0, 0, 0.8) !important;
+}
+legend {
+    width: inherit !important;
+}
+.btnAuth{
+    color: white !important;
+    background-color: #0076be !important;
+}
+
+.alert-error {
+    color: #b94a48;
+    background-color: #f2dede;
+    border-color: #eed3d7;
+}
+
+.boxex
+{
+    margin-top: 10px;
+    display: flex;
+    margin-bottom: 10px
+}
+
+.shade
+{
+    box-shadow: 0px 0px 20px 0px lightgrey;
+}
+
+.pbox1
+{
+    flex: 1;
+}
+
+
+.boxex h2
+{
+    flex: 2;
+}
+.boxex h5
+{
+    flex: 1;
+    color: orange;
+}
+
+.pbox1 img
+{
+    width: 120%;
+    min-width: 100px;
+}
+.pbox2
+{
+    flex: 4;
+    padding-left: 50px;
+}
+
+.pbox2 p{
+    font-size: 15px;
+    color: gray;
+}
+
+
+.mRow, mr2
+{
+    display: flex;
+}
+
+.mRowCh1{
+    flex: 3;
+}
+
+.mRowCh1 img
+{
+    width: 100%;
+}
+
+.mRowCh2{
+    flex: 2;
+}
+
+.mr21
+{
+    flex: 1;
+    padding: 5px;
+}
+
+.boxex span {
+    flex: 1;
+    color: grey;
+}
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}
+.mr22
+{
+    flex: 1;
+    color: orange;
+    padding: 5px;
+}
+
+@media only screen and (max-width: 400px) {
+    .mRow{
+        display: flex;
+        flex-direction: column;
+    }
+}
+.adsH1{
+    padding-top: 100px;
+    padding-bottom: 50px;
+    font-size: 45px;
+}

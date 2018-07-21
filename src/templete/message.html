@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/util.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+
+
+    <link rel="stylesheet" href="../css/styleschat.css" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <title>Message | OLX PWA</title>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</head>
+<body onload="getOldChat()" >
+<div id="preloadera" style="display: none;"></div>
+<center>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand"><div class="logo"><a href="../../index.html"><img src="../images/olxlogo.png" /></a></div></a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"> My Account
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu" id="btnAcc">
+                            <li><a href='javascript:void(0)' onclick='gotoSignIn()'><h5>SignUp/SignIn</h5></a></li>
+                            <li><a href='javascript:void(0)' onclick='myFavAds()'><h5>Favourites</h5></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0)" id="btnAdPost">Submit an Ad</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</center>
+<div class="main2">
+    <div class="contentWeb" id="cont">
+    </div>
+    <div class="footerWeb navbar-fixed-bottom">
+        <div class="footDiv">
+            <div class="inputF"><input type="text" id="inT" placeholder="Type a message" class="inputT" /></div>
+            <div class="btnF"><input type="image" src="../images/send.png" onclick="send()" class="img" ></div>
+        </div>
+    </div>
+</div>
+<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+<script src="../js/index.js"></script>
+
+</body>
+</html>
+
+

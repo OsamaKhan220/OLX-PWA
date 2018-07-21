@@ -1,0 +1,149 @@
+
+
+.main2
+{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10vh;
+    height: 90vh;
+}
+
+.headerWeb
+{
+    flex: 1.3;
+    display: flex;
+    background-color: #075e55;
+    box-shadow: 0 4px 2px -2px gray;
+}
+
+.contentWeb p{
+    display: inline;
+
+}
+
+.headF
+{
+    flex: 1;
+    align-self: center;
+}
+.headF4
+{
+    flex: 15;
+    align-self: center;
+}
+
+.headF1
+{
+    flex:.2;
+}
+
+.headp2
+{
+    font-size: 10px;
+    color: white;
+    margin-top: -15px;
+    margin-left: 15px;
+    color: lightgray;
+}
+
+
+.profilePic
+{
+    width: 50px;
+    border-radius: 50%;
+    padding: 2px;
+}
+.headP
+{
+    font-size: 18px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+    padding-left: 8px;
+}
+
+
+.contentWeb
+{
+    flex: 10;
+    background-color: transparents;
+    overflow: hidden;
+}
+
+.footerWeb
+{
+    flex: 1;
+    background-color: transparent;
+    margin-bottom: 35px !important;
+}
+
+.footDiv
+{
+    display: flex;}
+
+.text
+{
+    min-width: 52%;
+    max-width: 70%;
+    background-color: white;
+    margin: 10px;
+    padding: 10px 30px 10px 10px;
+    border-radius: 0px 10px 10px 10px ;
+    float: left;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+
+.text2
+{
+    min-width: 52%;
+    max-width: 70%;
+    background-color: #e1fec6;
+    margin: 10px;
+    padding: 10px 30px 10px 10px;
+    border-radius: 10px 0px 10px 10px;
+    float: right;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+.inputF input[type=text]
+{
+    border: 1px solid;
+    font-size: 18px;
+    height: 35px;
+    width: 90%;
+    margin-right: 5px;
+    float: right;
+    border-radius: 20px;
+    padding-left: 10px;
+    transition: 0.7s;
+}
+.inputF input[type=text]:focus
+{
+    outline: none;
+    font-size: 18px;
+    transition: 0.7s;
+}
+
+.inputF{
+    flex:5;
+    align-self: flex-start;
+}
+.btnF{
+    flex: 1;
+    align-self: flex-start;
+}
+
+.btnF input[type=image]{
+    height: 35px;
+    float: left;
+    background-color: transparent;
+    outline-style: none;
+
+}
+
+.send
+{
+    border-radius: 50px;
+}

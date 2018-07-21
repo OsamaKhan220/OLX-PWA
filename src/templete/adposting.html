@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/util.css">
+    <title>Ad | OLX PWA</title>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</head>
+<body onload="getEditFormData()">
+<div id="preloadera" style="display: none;"></div>
+<center>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand"><div class="logo"><a href="../../index.html"><img src="../images/olxlogo.png" /></a></div></a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"> My Account
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu" id="btnAcc">
+                            <li><a href='javascript:void(0)' onclick='gotoSignIn()'><h5>SignUp/SignIn</h5></a></li>
+                            <li><a href='javascript:void(0)' onclick='myFavAds()'><h5>Favourites</h5></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0)" id="btnAdPost">Submit an Ad</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</center>
+<div class="limiter">
+    <div class="container-login100" style="background-image: url(../images/ps2.png);">
+        <div class="wrap-login100" style="box-shadow: 0px 0px 50px -10px black">
+            <div class="login100-form-title" style="background-image: url(../images/ps.png);">
+					<span class="login100-form-title-1">
+						Submit an Ad
+					</span>
+            </div>
+            <div id="alertDiv" class="alertBox"></div>
+            <form class="login100-form validate-form">
+                <div class="wrap-input100 validate-input m-b-18" data-validate = "Title is required">
+                    <span class="label-input100">Ad Title:</span>
+                    <input class="input100" type="text" id="title" placeholder="Enter your ad title..." >
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input m-b-18" data-validate = "Category is required">
+                    <span class="label-input100">Category:</span>
+                    <select id="category" class="form-control">
+                        <option value="0">Choose Category</option>
+                        <option value="Mobiles">Mobile</option>
+                        <option value="Vehicles">Vehicles</option>
+                        <option value="Bikes">Bikes</option>
+                        <option value="Electronics & Home Appliances">Electronic & Home Appliances</option>
+                        <option value="Services">Services</option>
+                        <option value="Jobs">Jobs</option>
+                        <option value="Furniture & Home Decor">Furniture & Home Decor</option>
+                        <option value="Animals">Animals</option>
+                        <option value="Fashion & Beauty">Fashion & Beauty</option>
+                        <option value="Books">Books</option>
+                        <option value="Kids">Kids</option>
+                        <option value="Property">Property</option>
+                    </select>
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input m-b-18" data-validate = "Price is required">
+                    <span class="label-input100">Price:</span>
+                    <input type="text" id="price" placeholder="Enter price..." class="form-control"/>
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input m-b-18" data-validate = "Description is required">
+                    <span class="label-input100">Ad Description:</span>
+                    <textarea id="description" class="form-control " placeholder="Include the brand, model, age and any included accessories."></textarea>
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div id="photo" class="wrap-input100 validate-input m-b-18" data-validate = "Photo is required">
+                    <span class="label-input100">Upload Photo:</span>
+                    <input class="input100" type="file" id="photos" placeholder="Enter your email address..." >
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input m-b-18" data-validate = "Name is required">
+                    <span class="label-input100">Name:</span>
+                    <input class="input100" type="text" id="name" placeholder="Enter your Name..." >
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input m-b-18" data-validate = "Number is required">
+                    <span class="label-input100">Phone Number:</span>
+                    <input class="input100" type="number" minlength="10" id="number" placeholder="Enter your Phone number..." >
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input m-b-18" data-validate = "City is required">
+                    <span class="label-input100">City:</span>
+                    <input class="input100" type="text" id="city" placeholder="Enter your city..." >
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input m-b-18" data-validate = "Area is required">
+                    <span class="label-input100">Area / Neighbourhood:</span>
+                    <input class="input100" type="text" id="area" placeholder="Enter your Area/Neighbourhood...">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="container-login100-form-btn">
+                    <a class="login100-form-btn" id="formBtn" onclick="saveAd()">
+                        Submit
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+<script src="../js/index.js"></script>
+</body>
+</html>
+
+<!--<!doctype html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+    <!--<meta charset="UTF-8">-->
+    <!--<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
+    <!--<meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+    <!--<link rel="stylesheet" href="../css/style.css">-->
+    <!--<link rel="stylesheet" href="../css/bootstrap.min.css">-->
+    <!--<link rel="stylesheet" href="../css/styles.css" />-->
+    <!--<link rel="stylesheet" type="text/css" href="../css/util.css">-->
+    <!--<link rel="stylesheet" type="text/css" href="../css/main.css">-->
+    <!--<title>OLX PWA</title>-->
+    <!--<script src="../js/jquery.min.js"></script>-->
+    <!--<script src="../js/bootstrap.min.js"></script>-->
+    <!--<script>-->
+        <!--$(document).ready(function(){-->
+            <!--$('[data-toggle="popover"]').popover();-->
+        <!--});-->
+    <!--</script>-->
+<!--</head>-->
+<!--<body onload="getEditFormData()">-->
+<!--<div id="preloadera" style="display: none;"></div>-->
+<!--<center>-->
+    <!--<nav class="headBar nav-pills navbar-fixed-top">-->
+        <!--<div class="logo"><a href="../../index.html"><img src="../images/olxlogo.png" /></a></div>-->
+        <!--<div class="headb2">-->
+            <!--<div class="gap"></div>-->
+            <!--<div class="nm">-->
+                <!--<button id="btnBefore"-->
+                        <!--class="btnTop btn btn-warning btn-sm"-->
+                        <!--data-toggle="popover"-->
+                        <!--data-html="true"-->
+                        <!--data-placement="bottom"-->
+                        <!--title="My Account"-->
+                        <!--data-content="<a href='javascript:void(0)' onclick='gotoSignIn()'><h5>Create Account<h5/><a/><hr><a href='javascript:void(0)' onclick='myFavAds()'><h5>Favourites<h5/><a/>"-->
+                        <!--data-original-title="Popover top">-->
+                    <!--My Account <svg style='height:20px;margin-bottom: -4px'  aria-hidden="true" data-prefix="fas" data-icon="caret-down" class="svg-inline&#45;&#45;fa fa-caret-down fa-w-10" role="img" viewBox="0 0 320 512"><path fill="currentColor" d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"></path></svg>-->
+                <!--</button>-->
+                <!--<button id="btnAfter"-->
+                        <!--style="display: none;"-->
+                        <!--class="btnTop btn btn-warning btn-sm"-->
+                        <!--data-toggle="popover"-->
+                        <!--data-html="true"-->
+                        <!--data-placement="bottom"-->
+                        <!--title="My Account"-->
+                        <!--data-content="<a href='javascript:void(0)' onclick='myAds()'><h5>Ads<h5/><a/><hr><a href='javascript:void(0)' onclick='myFavAds()'><h5>Favourites<h5/><a/><hr><a href='javascript:void(0)' onclick='gotoMyMessages()'><h5>Messages<h5/><a/><hr><a href='javascript:void(0)' onclick='logout()'><h5>Logout<h5/><a/>"-->
+                        <!--data-original-title="Popover top">-->
+                    <!--My Account <svg style='height:20px;margin-bottom: -4px'  aria-hidden="true" data-prefix="fas" data-icon="caret-down" class="svg-inline&#45;&#45;fa fa-caret-down fa-w-10" role="img" viewBox="0 0 320 512"><path fill="currentColor" d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"></path></svg>-->
+                <!--</button>-->
+            <!--</div>-->
+            <!--<div class="nm"><button id="btnAdPost" class="btnTop btn btn-warning btn-sm">Submit an Ad</button></div>-->
+        <!--</div>-->
+    <!--</nav>-->
+<!--</center>-->
+<!--<div id="error" class="alert alert-error hide">-->
+    <!--<button class="close" data-dismiss="alert"></button>-->
+    <!--<span id="msg"></span>-->
+<!--</div>-->
+<!--<div id="success" class="alert alert-success hide">-->
+    <!--<button class="close" data-dismiss="alert"></button>-->
+    <!--<span id="successMsg"></span>-->
+<!--</div>-->
+<!--<div class="container">-->
+    <!--<div class="row my-3">-->
+        <!--<div class="col col-sm-8 offset-sm-2">-->
+            <!--<div>-->
+                <!--<h3>Submit an Ad</h3>-->
+            <!--</div>-->
+            <!--<fieldset>-->
+                <!--<div class="form-group">-->
+                    <!--<label for="title">Ad Title:</label>-->
+                    <!--<input type="text" id="title" placeholder="Enter your ad title..." class="form-control"/>-->
+                <!--</div>-->
+                <!--<div class="form-group">-->
+                    <!--<label for="category">Category:</label>-->
+                    <!--<select id="category" class="form-control">-->
+                        <!--<option value="0">Choose Category</option>-->
+                        <!--<option value="Mobiles">Mobile</option>-->
+                        <!--<option value="Vehicles">Vehicles</option>-->
+                        <!--<option value="Bikes">Bikes</option>-->
+                        <!--<option value="Electronics & Home Appliances">Electronic & Home Appliances</option>-->
+                        <!--<option value="Services">Services</option>-->
+                        <!--<option value="Jobs">Jobs</option>-->
+                        <!--<option value="Furniture & Home Decor">Furniture & Home Decor</option>-->
+                        <!--<option value="Animals">Animals</option>-->
+                        <!--<option value="Fashion & Beauty">Fashion & Beauty</option>-->
+                        <!--<option value="Books">Books</option>-->
+                        <!--<option value="Kids">Kids</option>-->
+                        <!--<option value="Property">Property</option>-->
+                    <!--</select>-->
+                <!--</div>-->
+                <!--<div class="form-group">-->
+                    <!--<label for="price">Price:</label>-->
+                    <!--<input type="text" id="price" placeholder="Enter price..." class="form-control"/>-->
+                <!--</div>-->
+                <!--<div class="form-group">-->
+                    <!--<label for="description">Ad Discription:</label>-->
+                    <!--<textarea id="description" class="form-control " placeholder="Include the brand, model, age and any included accessories."></textarea>-->
+                <!--</div>-->
+                <!--<div class="form-group" id="photo">-->
+                    <!--<label for="photos">Upload Photos:</label>-->
+                    <!--<input type="file" id="photos" placeholder="Enter your email address..." class="form-control" />-->
+                <!--</div>-->
+                <!--<div class="form-group">-->
+                    <!--<label for="name">Name:</label>-->
+                    <!--<input type="text" id="name" placeholder="Enter your Name..." class="form-control"/>-->
+                <!--</div>-->
+                <!--<div class="form-group">-->
+                    <!--<label for="number">Phone Number:</label>-->
+                    <!--<input type="number" minlength="10" id="number" placeholder="Enter your Phone number..." class="form-control"/>-->
+                <!--</div>-->
+                <!--<div class="form-group">-->
+                    <!--<label for="city">City:</label>-->
+                    <!--<input type="text" id="city" placeholder="Enter your city..." class="form-control"/>-->
+                <!--</div>-->
+                <!--<div class="form-group">-->
+                    <!--<label for="area">Area/Neighbourhood:</label>-->
+                    <!--<input type="text" id="area" placeholder="Enter your Area/Neighbourhood..." class="form-control"/>-->
+                <!--</div>-->
+                <!--<div class="form-group">-->
+                    <!--<button id="formBtn" onclick="saveAd()" class="btn btnAuth form-control" >Submit</button>-->
+                <!--</div>-->
+            <!--</fieldset>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+<!--<center>-->
+    <!--<div class="cont3" style="width: 100%;background-image: url(../images/white.png);box-shadow: 0px 0px 20px 0px black;">-->
+        <!--<div class="container">-->
+            <!--<br />-->
+            <!--<br />-->
+            <!--<h1>OLX PAKISTAN</h1>-->
+            <!--<h2>-</h2>-->
+
+            <!--<h4>Resale App is the Easiest way for<br /> Selling and buying second-hand goods</h4>-->
+            <!--<br />-->
+            <!--<button class="butn1" onClick="postAdd()"><b>POST A FREE ADD</b></button><br /><br />-->
+            <!--<button class="butn2" onClick="postAdd()"><b>LOGOUT</b></button><br /><br /><br /><br />-->
+        <!--</div>-->
+
+    <!--</div>-->
+<!--</center>-->
+
+<!--<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>-->
+<!--<script src="../js/index.js"></script>-->
+<!--</body>-->
+<!--</html>-->
